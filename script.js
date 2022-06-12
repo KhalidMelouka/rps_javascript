@@ -38,34 +38,4 @@ function singleRound(userSelection, computerSelection) {
 
 
 
-function game() {
-    while (true) {
-        userChoice = prompt("Rock, Paper, or Scissors? ").toLowerCase();
-        computerChoice = computerPlay(); 
-        result = singleRound(userChoice, computerChoice);
-        // this will reset the values and the function call everytime in the loop
 
-        if (result === "player") {
-            alert(`You Chose ${userChoice}, and computer chose ${computerChoice}`);
-            userScore++; 
-            alert(`player score: ${userScore} -- Machine score: ${computerScore}`);
-        } else if (result === "machine") {
-            alert(`You Chose ${userChoice}, and computer chose ${computerChoice}`);
-            computerScore++; 
-            alert(`player score: ${userScore} -- Machine score: ${computerScore}`)
-        } else if (result === "tie") {
-            alert(`You Chose ${userChoice}, and computer chose ${computerChoice}`);
-            alert("It's a tie"); 
-        }
-
-        if (userScore === 5) {
-            alert("congrats you won. You make us proud!"); 
-            break;
-        } else if (computerScore === 5) {
-            alert("machine won. You failed us!"); 
-            break; 
-        }
-    }
-}
-
-game();
