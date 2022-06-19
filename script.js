@@ -37,6 +37,7 @@ function playRound(selection, computerChoice) {
         selection === "rock" && computerChoice === "scissors" || 
         selection === "scissors" && computerChoice === "paper") {
         display.textContent = `you chose ${selection} and machine chose ${computerChoice}, you win`;
+        x += 1;
         playerScore += 1;
         player.textContent = playerScore;
     } else if (selection === computerChoice) {
