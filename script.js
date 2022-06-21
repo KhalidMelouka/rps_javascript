@@ -6,6 +6,9 @@
 const player = document.querySelector('#player'); 
 const machine = document.querySelector('#machine');
 const display = document.querySelector('.choice-display'); 
+const reset = document.createElement('button');
+const displayWinner = document.createElement('div');
+const containerOne = document.querySelector('.container-one');
 let selectedButton;
 const buttons = document.querySelectorAll('button');
 
@@ -18,14 +21,35 @@ let computerPlay = () => {
     return machineArray[Math.floor(Math.random() * (machineArray.length))]; 
 };
 
-
+    
 buttons.forEach(button => button.addEventListener('click', (e) => {
     selectedButton = button.className;
+    if (x === 10) {
+        if (playerScore > machineScore) {
+            displayWinner.textContent = 'Congrats you have beat the machine!';
+            document.querySelector('body').replaceChild(displayWinner, display);
+        } else if (playerScore < machineScore) {
+            displayWinner.textContent = 'Argh! It seems machine has beat you.'
+            document.querySelector('body').replaceChild(displayWinner, display);
+        } else if (playerScore === machineScore) {
+            displayWinner.textContent = "it's a tie. You have fought bravely, you should try again!"
+            document.querySelector('body').replaceChild(displayWinner, display);
+        };
+        containerOne.textContent = "";
+        reset.textContent = 'Play Again';
+        reset.classList.add = 'reset-button';
+        containerOne.appendChild(reset);
+        reset.addEventListener('click', () => {
+            location.reload(true);
+        });
+    }; 
     playRound(selectedButton, computerPlay());
+
 }));
 
 
 function playRound(selection, computerChoice) {
+    
     if (selection === "rock" && computerChoice === "paper" ||
         selection === "scissors" && computerChoice === "rock" || 
         selection === "paper" && computerChoice === "scissors") {
