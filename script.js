@@ -10,7 +10,7 @@ const reset = document.createElement('button');
 const displayWinner = document.createElement('div');
 const containerOne = document.querySelector('.container-one');
 let selectedButton;
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('#button');
 
 let playerScore = 0; 
 let machineScore = 0; 
@@ -37,14 +37,14 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
         };
         containerOne.textContent = "";
         reset.textContent = 'Play Again';
-        reset.classList.add = 'reset-button';
+        reset.classList.add('reset-button');
         containerOne.appendChild(reset);
         reset.addEventListener('click', () => {
             location.reload(true);
         });
+    } else {
+        playRound(selectedButton, computerPlay());
     }; 
-    playRound(selectedButton, computerPlay());
-
 }));
 
 

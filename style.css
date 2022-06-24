@@ -1,0 +1,45 @@
+ * {
+     background-color: white;
+     box-sizing: border-box;
+ }
+
+
+
+body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.container-one{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+#button {
+    background-color: none;
+    text-align: center;
+    transition: 1.2;
+}
+
+#button:hover {
+    transform: scale(1.2);
+}
+
+.reset-button {
+    background-color: white;
+    font-size: 20px;
+    border: solid 2px black; 
+    transition: 1.5;
+    padding: 15px 40px;
+}
+
+.reset-button:hover {
+    background-color:black;
+    transform: scale(1);
+    color: white;
+}
