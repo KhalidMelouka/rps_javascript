@@ -26,13 +26,13 @@ buttons.forEach(button => button.addEventListener('click', (e) => {
     selectedButton = button.className;
     if (x === 10) {
         if (playerScore > machineScore) {
-            displayWinner.textContent = 'Congrats you have beat the machine!';
+            displayWinner.textContent = 'Congrats! you have beat the computer!';
             document.querySelector('body').replaceChild(displayWinner, display);
         } else if (playerScore < machineScore) {
-            displayWinner.textContent = 'Argh! It seems machine has beat you.'
+            displayWinner.textContent = 'Argh! It seems computer has beat you.'
             document.querySelector('body').replaceChild(displayWinner, display);
         } else if (playerScore === machineScore) {
-            displayWinner.textContent = "it's a tie. You have fought bravely, you should try again!"
+            displayWinner.textContent = "It's a tie. You have fought bravely, you should try again!"
             document.querySelector('body').replaceChild(displayWinner, display);
         };
         containerOne.textContent = "";
@@ -53,19 +53,19 @@ function playRound(selection, computerChoice) {
     if (selection === "rock" && computerChoice === "paper" ||
         selection === "scissors" && computerChoice === "rock" || 
         selection === "paper" && computerChoice === "scissors") {
-        display.textContent = `you chose ${selection} and machine chose ${computerChoice}, machine wins`;
+        display.textContent = `you chose ${selection} and computer chose ${computerChoice}, computer wins`;
         x += 1;
         machineScore += 1;
         machine.textContent = machineScore;
     } else if (selection === "paper" && computerChoice === "rock" ||
         selection === "rock" && computerChoice === "scissors" || 
         selection === "scissors" && computerChoice === "paper") {
-        display.textContent = `you chose ${selection} and machine chose ${computerChoice}, you win`;
+        display.textContent = `you chose ${selection} and computer chose ${computerChoice}, you win`;
         x += 1;
         playerScore += 1;
         player.textContent = playerScore;
     } else if (selection === computerChoice) {
-        display.textContent = `you chose ${selection} and machine chose ${computerChoice}, it's a tie`;
+        display.textContent = `you chose ${selection} and computer chose ${computerChoice}, it's a tie`;
         x += 1;
     };
 };
